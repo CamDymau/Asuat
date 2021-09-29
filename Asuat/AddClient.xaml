@@ -1,0 +1,64 @@
+﻿<mah:MetroWindow x:Class="Asuat.AddClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:Asuat"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"  
+         ResizeMode="NoResize"
+       Title="Добавление клиента" MinHeight="550" MinWidth="350" MaxHeight="550" MaxWidth="350" Height="550" Width="350" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="43*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="115*"/>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock TextWrapping="Wrap" Text="Регистрация клиента" FontSize="24" Margin="0,10,0,16" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txbName" Grid.Column="1" Margin="5,0,4,0" FontSize="16" Grid.Row="2" TextWrapping="Wrap" Text="" PreviewTextInput="Check_PreviewTextInput" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Column="1" Margin="5,5,22,0" Grid.Row="3" FontSize="16" TextWrapping="Wrap" Text="Фамилия"/>
+        <TextBox x:Name="txbSur" Grid.Column="1" Margin="5,0,4,0" FontSize="16" PreviewTextInput="Check_PreviewTextInput" Grid.Row="4" TextWrapping="Wrap" Text="" Grid.ColumnSpan="2"/>
+
+
+        <TextBlock Grid.Column="1" Margin="5,2,22,0" Grid.Row="5" FontSize="16" TextWrapping="Wrap" Text="Отчество"/>
+        <TextBox x:Name="txbFname" Grid.Column="1" Margin="5,0,4,0" FontSize="16" Grid.Row="6" PreviewTextInput="Check_PreviewTextInput" TextWrapping="Wrap" Text="" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Column="1" Margin="5,3,106,0" Grid.Row="7" FontSize="16" TextWrapping="Wrap" Grid.ColumnSpan="2"><Run Text="Номер тел"/><Run Text="е"/><Run Text="фона"/></TextBlock>
+        <TextBox x:Name="txbMob" Grid.Column="1" Margin="5,0,4,0" FontSize="16" Grid.Row="8" TextWrapping="Wrap" Text=""  PreviewTextInput="txtNum_PreviewTextInput" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Column="1" Margin="5,8,7,0" Grid.Row="9" FontSize="16" TextWrapping="Wrap" Text="Номер карты"/>
+        <TextBox x:Name="txbNum" Grid.Column="1" Margin="5,0,4,0" FontSize="16" Grid.Row="10" TextWrapping="Wrap" Text=""  PreviewTextInput="txtNum_PreviewTextInput" Grid.ColumnSpan="2" />
+        <TextBlock Grid.Column="2" Margin="6,8,18,0" Grid.Row="9" FontSize="16" TextWrapping="Wrap" Foreground="#FF9B9B9B"><Run Text="*8 "/><Run Text="цифр"/></TextBlock>
+
+        <TextBlock Grid.Column="1" Margin="5,7,106,0" Grid.Row="11" FontSize="16" TextWrapping="Wrap" Grid.ColumnSpan="2" Text="Процент скидки"/>
+        <TextBox x:Name="txbPer" Grid.Column="1" Margin="5,0,4,0" FontSize="16" Grid.Row="12" TextWrapping="Wrap" Text=""  PreviewTextInput="txtNum_PreviewTextInput"  Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="1" Margin="5,5,22,0" Grid.Row="1" FontSize="16" TextWrapping="Wrap" Text="Имя"/>
+
+
+        <Button Content="Назад" Grid.Column="1" Margin="5,5,3,5" FontSize="16" Grid.Row="13" Click="ButtunCancel_Click"/>
+        <Button Content="Добавить" IsDefault = "true" Grid.Column="2" Margin="10,5" FontSize="16" Grid.Row="13" Click="ButtonAdd_Click"/>
+        <TextBlock Grid.Column="2" Margin="19,5,10,4" Grid.Row="7" FontSize="16" TextWrapping="Wrap" Foreground="#FF9B9B9B"><Run Text="*без +"/><Run Text=" "/></TextBlock>
+
+
+    </Grid>
+</mah:MetroWindow>

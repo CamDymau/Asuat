@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище KrotovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIO" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="NumCard" Type="int" Nullable="false" />
+    <Property Name="NumMobile" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PerсentDiscount" Type="int" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="IDProduct" />
+    </Key>
+    <Property Name="IDProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImgProduct" Type="image" />
+    <Property Name="NameProduct" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PledgePrice" Type="int" Nullable="false" />
+    <Property Name="PriceProduct" Type="int" Nullable="false" />
+    <Property Name="Rent" Type="bit" Nullable="false" />
+    <Property Name="Check" Type="varchar" MaxLength="50" />
+    <Property Name="IDClient" Type="int" />
+    <Property Name="StartRent" Type="date" />
+    <Property Name="EndRent" Type="date" />
+  </EntityType>
+  <EntityType Name="SelectProduct">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Client" Type="int" />
+    <Property Name="ID_Products" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_SelectProduct_Client1">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="SelectProduct" Type="Self.SelectProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SelectProduct">
+        <PropertyRef Name="ID_Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SelectProduct_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="SelectProduct" Type="Self.SelectProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="IDProduct" />
+      </Principal>
+      <Dependent Role="SelectProduct">
+        <PropertyRef Name="ID_Products" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище KrotovModelContainer">
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SelectProduct" EntityType="Self.SelectProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_SelectProduct_Client1" Association="Self.FK_SelectProduct_Client1">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="SelectProduct" EntitySet="SelectProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SelectProduct_Product" Association="Self.FK_SelectProduct_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="SelectProduct" EntitySet="SelectProduct" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

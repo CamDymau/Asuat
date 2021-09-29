@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asuat", "Asuat\Asuat.csproj", "{35C62C89-9D01-46F5-9FF6-AAABB7D8404B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35C62C89-9D01-46F5-9FF6-AAABB7D8404B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C62C89-9D01-46F5-9FF6-AAABB7D8404B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C62C89-9D01-46F5-9FF6-AAABB7D8404B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C62C89-9D01-46F5-9FF6-AAABB7D8404B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5FA79FC-E4FF-41BB-9945-8FBACD288FB8}
+	EndGlobalSection
+EndGlobal
